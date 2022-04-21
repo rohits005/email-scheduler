@@ -1,0 +1,450 @@
+{
+	"info": {
+		"_postman_id": "07a8b4e7-9935-47b3-9e16-76130af44f35",
+		"name": "EmailScheduler-APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateEmailScheduler",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"to_email_ids\": \"rohitsuryawanshi005@gmail.com\",\n    \"cc_email_ids\": \"rohitsuryawanshi005@gmail.com\",\n    \"bcc_email_ids\": \"rohitsuryawanshi005@gmail.com\",\n    \"email_subject\": \"Greetings! This is Test Message\",\n    \"email_body\": \"Hello Sir/Madam, This email is for testing purpose. Please ignore. Thanks and Regards, Rohit Suryawanshi\",\n    \"schedule_date_time\": \"2022-04-23 20:12:43\",\n    \"user_email\": \"rohitsuryawanshi1997@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/email-scheduler/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"email-scheduler",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Succss-CreateEmailScheduler",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"to_email_ids\": \"rohitsuryawanshi005@gmail.com\",\n    \"cc_email_ids\": \"rohitsuryawanshi005@gmail.com\",\n    \"bcc_email_ids\": \"rohitsuryawanshi005@gmail.com\",\n    \"email_subject\": \"Greetings! This is Test Message\",\n    \"email_body\": \"Hello Sir/Madam, This email is for testing purpose. Please ignore. Thanks and Regards, Rohit Suryawanshi\",\n    \"schedule_date_time\": \"2022-04-23 20:12:43\",\n    \"user_email\": \"rohitsuryawanshi1997@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/email-scheduler/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"email-scheduler",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "99"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"63-sx3jj5jWm2IX7TZKgWW1a/EEcAo\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Apr 2022 14:49:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"statusCode\": 200,\n    \"message\": \"Email scheduler created successfully\",\n    \"payload\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "ListEmailScheduler",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/email-scheduler/list?user_email=rohitsuryawanshi1997@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"email-scheduler",
+						"list"
+					],
+					"query": [
+						{
+							"key": "user_email",
+							"value": "rohitsuryawanshi1997@gmail.com"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success-ListEmailScheduler",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/email-scheduler/list?email=rohitsuryawanshi1997@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"email-scheduler",
+								"list"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "rohitsuryawanshi1997@gmail.com"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2233"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8b9-akHCLmd6KXhiA1mn0kg4fUwk5ik\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Apr 2022 14:58:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"statusCode\": 200,\n    \"message\": \"Email scheduler listed successfully\",\n    \"payload\": [\n        {\n            \"id\": 2,\n            \"to_email_ids\": \"rohitsuryawanshi005@gmail.com\",\n            \"cc_email_ids\": \"rohitsuryawanshi005@gmail.com\",\n            \"bcc_email_ids\": \"rohitsuryawanshi005@gmail.com\",\n            \"email_subject\": \"Greetings! This is Test Message\",\n            \"email_body\": \"Hello Sir/Madam, This email is for testing purpose. Please ignore. Thanks and Regards, Rohit Suryawanshi\",\n            \"schedule_date_time\": null,\n            \"is_deleted\": 0,\n            \"created_by\": \"rohitsuryawanshi1997@gmail.com\",\n            \"updated_by\": \"rohitsuryawanshi1997@gmail.com\",\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 3,\n            \"to_email_ids\": \"rohitsuryawanshi005@gmail.com\",\n            \"cc_email_ids\": \"rohitsuryawanshi005@gmail.com\",\n            \"bcc_email_ids\": \"rohitsuryawanshi005@gmail.com\",\n            \"email_subject\": \"Greetings! This is Test Message\",\n            \"email_body\": \"Hello Sir/Madam, This email is for testing purpose. Please ignore. Thanks and Regards, Rohit Suryawanshi\",\n            \"schedule_date_time\": null,\n            \"is_deleted\": 0,\n            \"created_by\": \"rohitsuryawanshi1997@gmail.com\",\n            \"updated_by\": \"rohitsuryawanshi1997@gmail.com\",\n            \"created_at\": \"2022-04-20T14:42:43.000Z\",\n            \"updated_at\": \"2022-04-20T14:42:43.000Z\"\n        },\n        {\n            \"id\": 4,\n            \"to_email_ids\": \"rohitsuryawanshi005@gmail.com\",\n            \"cc_email_ids\": \"rohitsuryawanshi005@gmail.com\",\n            \"bcc_email_ids\": \"rohitsuryawanshi005@gmail.com\",\n            \"email_subject\": \"Greetings! This is Test Message\",\n            \"email_body\": \"Hello Sir/Madam, This email is for testing purpose. Please ignore. Thanks and Regards, Rohit Suryawanshi\",\n            \"schedule_date_time\": \"2022-04-21T14:42:43.000Z\",\n            \"is_deleted\": 0,\n            \"created_by\": \"rohitsuryawanshi1997@gmail.com\",\n            \"updated_by\": \"rohitsuryawanshi1997@gmail.com\",\n            \"created_at\": \"2022-04-20T14:47:58.000Z\",\n            \"updated_at\": \"2022-04-20T14:47:58.000Z\"\n        },\n        {\n            \"id\": 5,\n            \"to_email_ids\": \"rohitsuryawanshi005@gmail.com\",\n            \"cc_email_ids\": \"rohitsuryawanshi005@gmail.com\",\n            \"bcc_email_ids\": \"rohitsuryawanshi005@gmail.com\",\n            \"email_subject\": \"Greetings! This is Test Message\",\n            \"email_body\": \"Hello Sir/Madam, This email is for testing purpose. Please ignore. Thanks and Regards, Rohit Suryawanshi\",\n            \"schedule_date_time\": \"2022-04-23T14:42:43.000Z\",\n            \"is_deleted\": 0,\n            \"created_by\": \"rohitsuryawanshi1997@gmail.com\",\n            \"updated_by\": \"rohitsuryawanshi1997@gmail.com\",\n            \"created_at\": \"2022-04-20T14:49:15.000Z\",\n            \"updated_at\": \"2022-04-20T14:49:15.000Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateEmailScheduler",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"scheduler_id\": 4,\n    \"user_email\": \"rohitsuryawanshi1997@gmail.com\",\n    \"schedule_date_time\": \"2022-04-26 20:12:43\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/email-scheduler/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"email-scheduler",
+						"update"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success-UpdateEmailScheduler",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"scheduler_id\": 4,\n    \"user_email\": \"rohitsuryawanshi1997@gmail.com\",\n    \"schedule_date_time\": \"2022-04-26 20:12:43\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/email-scheduler/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"email-scheduler",
+								"update"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "99"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"63-G80UNQX5dwD+3sKpTsOO5pTI2lg\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Apr 2022 15:33:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"statusCode\": 200,\n    \"message\": \"Email scheduler updated successfully\",\n    \"payload\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteEmailScheduler",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"scheduler_id\": 2,\n    \"user_email\": \"rohitsuryawanshi1997@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/email-scheduler/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"email-scheduler",
+						"delete"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success-DeleteEmailScheduler",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"scheduler_id\": 2,\n    \"user_email\": \"rohitsuryawanshi1997@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/email-scheduler/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"email-scheduler",
+								"delete"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "99"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"63-ZH3K4kOud95+wNlZ+SPhkJc4gM4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 20 Apr 2022 15:15:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"statusCode\": 200,\n    \"message\": \"Email scheduler deleted successfully\",\n    \"payload\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "ListUnsentEmails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/email-scheduler/unsentEmails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"email-scheduler",
+						"unsentEmails"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success-ListUnsentEmails",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/email-scheduler/unsentEmails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"email-scheduler",
+								"unsentEmails"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2639"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a4f-K86Qnax4ygkSWe3zNSih5gMk8MY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Apr 2022 03:06:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"statusCode\": 200,\n    \"message\": \"Unsent emails listed successfully\",\n    \"payload\": [\n        {\n            \"id\": 1,\n            \"mail_options\": null,\n            \"schedule_date_time\": \"2022-04-21T02:38:55.000Z\",\n            \"unsent_email_reason\": null,\n            \"status\": 1,\n            \"created_at\": \"2022-04-21T02:38:12.000Z\"\n        },\n        {\n            \"id\": 2,\n            \"mail_options\": null,\n            \"schedule_date_time\": \"2022-04-21T02:38:55.000Z\",\n            \"unsent_email_reason\": null,\n            \"status\": 1,\n            \"created_at\": \"2022-04-21T02:38:22.000Z\"\n        },\n        {\n            \"id\": 3,\n            \"mail_options\": null,\n            \"schedule_date_time\": \"2022-04-21T02:40:55.000Z\",\n            \"unsent_email_reason\": null,\n            \"status\": 1,\n            \"created_at\": \"2022-04-21T02:40:12.000Z\"\n        },\n        {\n            \"id\": 4,\n            \"mail_options\": \"{\\\"from\\\":\\\"rohitsuryawanshi1997@gmail.com\\\",\\\"to\\\":\\\"rohitsuryawanshi005@gmail.com\\\",\\\"subject\\\":\\\"Greetings! This is Test Message\\\",\\\"text\\\":\\\"Hello Sir/Madam, This email is for testing purpose. Please ignore. Thanks and Regards, Rohit Suryawanshi\\\"}\",\n            \"schedule_date_time\": \"2022-04-21T02:49:55.000Z\",\n            \"unsent_email_reason\": null,\n            \"status\": 1,\n            \"created_at\": \"2022-04-21T02:49:12.000Z\"\n        },\n        {\n            \"id\": 5,\n            \"mail_options\": \"{\\\"from\\\":\\\"rohitsuryawanshi1997@gmail.com\\\",\\\"to\\\":\\\"rohitsuryawanshi005@gmail.com\\\",\\\"subject\\\":\\\"Greetings! This is Test Message\\\",\\\"text\\\":\\\"Hello Sir/Madam, This email is for testing purpose. Please ignore. Thanks and Regards, Rohit Suryawanshi\\\"}\",\n            \"schedule_date_time\": \"2022-04-21T02:49:55.000Z\",\n            \"unsent_email_reason\": null,\n            \"status\": 1,\n            \"created_at\": \"2022-04-21T02:49:23.000Z\"\n        },\n        {\n            \"id\": 6,\n            \"mail_options\": \"{\\\"from\\\":\\\"rohitsuryawanshi1997@gmail.com\\\",\\\"to\\\":\\\"rohitsuryawanshi005@gmail.com\\\",\\\"subject\\\":\\\"Greetings! This is Test Message\\\",\\\"text\\\":\\\"Hello Sir/Madam, This email is for testing purpose. Please ignore. Thanks and Regards, Rohit Suryawanshi\\\"}\",\n            \"schedule_date_time\": \"2022-04-21T02:50:55.000Z\",\n            \"unsent_email_reason\": null,\n            \"status\": 1,\n            \"created_at\": \"2022-04-21T02:50:52.000Z\"\n        },\n        {\n            \"id\": 7,\n            \"mail_options\": \"{\\\"from\\\":\\\"rohitsuryawanshi1997@gmail.com\\\",\\\"to\\\":\\\"rohitsuryawanshi005@gmail.com\\\",\\\"subject\\\":\\\"Greetings! This is Test Message\\\",\\\"text\\\":\\\"Hello Sir/Madam, This email is for testing purpose. Please ignore. Thanks and Regards, Rohit Suryawanshi\\\"}\",\n            \"schedule_date_time\": \"2022-04-21T02:56:55.000Z\",\n            \"unsent_email_reason\": \"\\\"534-5.7.14 <https://accounts.google.com/signin/continue?sarp=1&scc=1&plt=AKgnsbs\\\\n534-5.7.14 nFgujFQLugkuiqUFk5aQ3Hx4Zje-NPXKiYUw_2n4ICES2xRZo-6M4NRjO9nR3Sb1_QsfR\\\\n534-5.7.14 G-QPqy22Pvjo7ud8RWJxWH4q48ejb850XXTiKRvyMcg_x1vht-hP-310PrzFhwK6>\\\\n534-5.7.14 Please log in via your web browser and then try again.\\\\n534-5.7.14  Learn more at\\\\n534 5.7.14  https://support.google.com/mail/answer/78754 l2-20020a056a0016c200b004f7e3181a41sm23155317pfc.98 - gsmtp\\\"\",\n            \"status\": 1,\n            \"created_at\": \"2022-04-21T02:56:42.000Z\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
