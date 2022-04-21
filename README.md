@@ -1,2 +1,2 @@
 # email-scheduler
-This repository is for Email SChduler and Send Email.
+This repository is for Email Scheduler and Send Email.
