@@ -1,4 +1,4 @@
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 
 const startup = (app) => {
   app.use(bodyParser.json());

@@ -1,6 +1,6 @@
 // To get Environment Variables from Local System
-const path = require('path');
-require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "../../.env") });
 // Environment Variables
 const { APP_PORT } = process.env
 
@@ -10,8 +10,8 @@ const express = require("express");
 const app = express();
 startup(app);
 
-const HTTP_CODE = require('../common/utils/constants');
-const responder = require('../common/utils/responder');
+const HTTP_CODE = require("../common/utils/constants");
+const responder = require("../common/utils/responder");
 
 // Modules
 const CreateScheduler = require("./createScheduler/create");
@@ -35,12 +35,12 @@ app.post("/email-scheduler/create", async (request, response) => {
         const createSchedulerResponse =  await createScheduler.create(reqBody, response);
         // console.log("createSchedulerResponse", createSchedulerResponse);
         if(createSchedulerResponse){
-            return responder.responseHandler(true, HTTP_CODE.SUCCESS, [], 'Email scheduler created successfully', response);
+            return responder.responseHandler(true, HTTP_CODE.SUCCESS, [], "Email scheduler created successfully", response);
         }
-        return responder.responseHandler(false, HTTP_CODE.INTERNAL_SERVER_ERROR, [], 'INTERNAL SERVER ERROR', response);
+        return responder.responseHandler(false, HTTP_CODE.INTERNAL_SERVER_ERROR, [], "INTERNAL SERVER ERROR", response);
     } catch (error) {
         console.log("error in create handler", error);
-        return responder.responseHandler(false, HTTP_CODE.BAD_REQUEST, [], 'BAD REQUEST', response);
+        return responder.responseHandler(false, HTTP_CODE.BAD_REQUEST, [], "BAD REQUEST", response);
     }
 });
 
@@ -52,12 +52,12 @@ app.get("/email-scheduler/list", async (request, response) => {
         const listSchedulerResponse =  await listScheduler.list(reqBody, response);
         // console.log("listSchedulerResponse", listSchedulerResponse);
         if(listSchedulerResponse){
-            return responder.responseHandler(true, HTTP_CODE.SUCCESS, listSchedulerResponse, 'Email scheduler listed successfully', response);
+            return responder.responseHandler(true, HTTP_CODE.SUCCESS, listSchedulerResponse, "Email scheduler listed successfully", response);
         }
-        return responder.responseHandler(false, HTTP_CODE.INTERNAL_SERVER_ERROR, [], 'INTERNAL SERVER ERROR', response);
+        return responder.responseHandler(false, HTTP_CODE.INTERNAL_SERVER_ERROR, [], "INTERNAL SERVER ERROR", response);
     } catch (error) {
         console.log("error in list handler", error);
-        return responder.responseHandler(false, HTTP_CODE.BAD_REQUEST, [], 'BAD REQUEST', response);
+        return responder.responseHandler(false, HTTP_CODE.BAD_REQUEST, [], "BAD REQUEST", response);
     }
 });
 
@@ -69,12 +69,12 @@ app.post("/email-scheduler/delete", async (request, response) => {
         const deleteSchedulerResponse =  await deleteScheduler.delete(reqBody, response);
         // console.log("deleteSchedulerResponse", deleteSchedulerResponse);
         if(deleteSchedulerResponse){
-            return responder.responseHandler(true, HTTP_CODE.SUCCESS, [], 'Email scheduler deleted successfully', response);
+            return responder.responseHandler(true, HTTP_CODE.SUCCESS, [], "Email scheduler deleted successfully", response);
         }
-        return responder.responseHandler(false, HTTP_CODE.INTERNAL_SERVER_ERROR, [], 'INTERNAL SERVER ERROR', response);
+        return responder.responseHandler(false, HTTP_CODE.INTERNAL_SERVER_ERROR, [], "INTERNAL SERVER ERROR", response);
     } catch (error) {
         console.log("error in delete handler", error);
-        return responder.responseHandler(false, HTTP_CODE.BAD_REQUEST, [], 'BAD REQUEST', response);
+        return responder.responseHandler(false, HTTP_CODE.BAD_REQUEST, [], "BAD REQUEST", response);
     }
 });
 
@@ -86,12 +86,12 @@ app.post("/email-scheduler/update", async (request, response) => {
         const updateSchedulerResponse =  await updateScheduler.update(reqBody, response);
         // console.log("updateSchedulerResponse", updateSchedulerResponse);
         if(updateSchedulerResponse){
-            return responder.responseHandler(true, HTTP_CODE.SUCCESS, [], 'Email scheduler updated successfully', response);
+            return responder.responseHandler(true, HTTP_CODE.SUCCESS, [], "Email scheduler updated successfully", response);
         }
-        return responder.responseHandler(false, HTTP_CODE.INTERNAL_SERVER_ERROR, [], 'INTERNAL SERVER ERROR', response);
+        return responder.responseHandler(false, HTTP_CODE.INTERNAL_SERVER_ERROR, [], "INTERNAL SERVER ERROR", response);
     } catch (error) {
         console.log("error in update handler", error);
-        return responder.responseHandler(false, HTTP_CODE.BAD_REQUEST, [], 'BAD REQUEST', response);
+        return responder.responseHandler(false, HTTP_CODE.BAD_REQUEST, [], "BAD REQUEST", response);
     }
 });
 // Send Email service
@@ -105,12 +105,12 @@ app.get("/email-scheduler/unsentEmails", async (request, response) => {
         const listunsentEmailResponse =  await listUnsentEmail.listUnsentEmail(reqBody, response);
         // console.log("listunsentEmailResponse", listunsentEmailResponse);
         if(listunsentEmailResponse){
-            return responder.responseHandler(true, HTTP_CODE.SUCCESS, listunsentEmailResponse, 'Unsent emails listed successfully', response);
+            return responder.responseHandler(true, HTTP_CODE.SUCCESS, listunsentEmailResponse, "Unsent emails listed successfully", response);
         }
-        return responder.responseHandler(false, HTTP_CODE.INTERNAL_SERVER_ERROR, [], 'INTERNAL SERVER ERROR', response);
+        return responder.responseHandler(false, HTTP_CODE.INTERNAL_SERVER_ERROR, [], "INTERNAL SERVER ERROR", response);
     } catch (error) {
         console.log("error in unsent email list handler", error);
-        return responder.responseHandler(false, HTTP_CODE.BAD_REQUEST, [], 'BAD REQUEST', response);
+        return responder.responseHandler(false, HTTP_CODE.BAD_REQUEST, [], "BAD REQUEST", response);
     }
 });
 
