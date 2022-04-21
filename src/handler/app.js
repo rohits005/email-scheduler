@@ -19,11 +19,13 @@ const ListScheduler = require("./listScheduler/list");
 const DeleteScheduler = require("./deleteScheduler/delete");
 const UpdateScheduler = require("./updateScheduler/update");
 const SendEmail = require("./sendEmail/scheduleEmail");
+const ListUnsentEmail = require("./listUnsentEmail/listUnsentEmail");
 const createScheduler = new CreateScheduler();
 const listScheduler = new ListScheduler();
 const deleteScheduler = new DeleteScheduler();
 const updateScheduler = new UpdateScheduler();
 const sendEmail = new SendEmail();
+const listUnsentEmail = new ListUnsentEmail();
 
 // Create Email Scheduler
 app.post("/email-scheduler/create", async (request, response) => {
@@ -94,6 +96,23 @@ app.post("/email-scheduler/update", async (request, response) => {
 });
 // Send Email service
 sendEmail.sendEmail();
+
+// List Unsent Email
+app.get("/email-scheduler/unsentEmails", async (request, response) => {
+    const reqBody = request?.query
+    console.log("list unsentEmail Request", reqBody);
+    try {
+        const listunsentEmailResponse =  await listUnsentEmail.listUnsentEmail(reqBody, response);
+        // console.log("listunsentEmailResponse", listunsentEmailResponse);
+        if(listunsentEmailResponse){
+            return responder.responseHandler(true, HTTP_CODE.SUCCESS, listunsentEmailResponse, 'Unsent emails listed successfully', response);
+        }
+        return responder.responseHandler(false, HTTP_CODE.INTERNAL_SERVER_ERROR, [], 'INTERNAL SERVER ERROR', response);
+    } catch (error) {
+        console.log("error in unsent email list handler", error);
+        return responder.responseHandler(false, HTTP_CODE.BAD_REQUEST, [], 'BAD REQUEST', response);
+    }
+});
 
 // App Listining Port
 app.listen(APP_PORT, () => {

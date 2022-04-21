@@ -16,7 +16,7 @@ class Database {
             console.log("sqlDbParams : ", params);
             const promisePool = pool.promise();
             const [queryResult, fields] = await promisePool.query(query, params);
-            console.log("queryResult", queryResult);
+            // console.log("queryResult", queryResult);
             if (!queryResult) {
                 console.log(" ! queryResult", queryResult);
                 return false;
