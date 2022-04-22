@@ -29,6 +29,7 @@ class SendEmail {
         for(let i in schedulerDetailsResponse){
           let schedules = schedulerDetailsResponse[i];
           let scheduleTime = moment(schedules?.schedule_date_time).tz('Asia/Kolkata').format('MM/DD/YYYY hh:mm:ss a');
+          endTime = moment(schedules?.schedule_date_time).add('60', 'seconds').tz('Asia/Kolkata').format('MM/DD/YYYY hh:mm:ss a');
           // console.log("scheduleTime", scheduleTime);
           // console.log("todayTime", todayTime);
           // console.log("endTime", endTime);
